@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Recipe} from './models/recipe.model'
+import { NullTemplateVisitor } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,19 @@ export class AppComponent {
    new Recipe('pasta',['pasta','salt','tomatoes'],'Add pasta in boiling water,Add salt and tomatoes,done.', './assets/images/pasta.jpg')
  ];
 
+ selectedRecipe:Recipe = null;
+
+ finishedEditing(){
+  this.selectedRecipe = null;
+}
+
+editRecipe(recipe : Recipe){
+  this.selectedRecipe = recipe;
+}
+
  showRecipe(){
  this.display=!this.display;
 }
-public selectedRecipe: Recipe = null;
-// editRecipe(recipe:Recipe){
-//   this.selectedRecipe = recipe;
-// }
-// finishedEditing(){
-//   this.selectedRecipe = null;
-// }
+
+
 }

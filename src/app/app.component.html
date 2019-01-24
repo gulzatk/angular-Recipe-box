@@ -19,6 +19,8 @@
 
    <button (click)="editRecipe(recipe)" class="btn btn-danger">Edit</button>
 </div>
+
+
 <form *ngIf="selectedRecipe" class="hideInput">
   <div>
     <input [(ngModel)]="selectedRecipe.title" type="text" name="title">
