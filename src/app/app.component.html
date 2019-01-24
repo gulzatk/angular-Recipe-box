@@ -4,9 +4,9 @@
 </div>
 <h2>List of recipies:</h2>
 <div *ngFor="let recipe of recipies">
-  <div (click)='showRecipe()'><h3 >{{recipe.title}}</h3>
+  <div (click)='showRecipe(recipe)'><h3 >{{recipe.title}}</h3>
 </div>
-<div id=info *ngIf="display">
+<div id=info *ngIf="recipe.display">
   <img [src]="recipe.image" alt="eggs">
 <p>Ingredients:</p>
 <ul *ngFor="let ingredient of recipe.ingredients">

@@ -8,7 +8,7 @@ import { NullTemplateVisitor } from '@angular/compiler';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  display:boolean = false;
+  
  recipies:Recipe[] = [
    new Recipe('Fried eggs',['egg','salt','butter'],'put butter in a pan and add eggs into pan,add salt,done.','./assets/images/eggs.jpeg'),
    new Recipe('pasta',['pasta','salt','tomatoes'],'Add pasta in boiling water,Add salt and tomatoes,done.', './assets/images/pasta.jpg')
@@ -20,12 +20,13 @@ export class AppComponent {
   this.selectedRecipe = null;
 }
 
-editRecipe(recipe : Recipe){
+editRecipe(recipe){
   this.selectedRecipe = recipe;
 }
 
- showRecipe(){
- this.display=!this.display;
+ showRecipe(recipe){
+ recipe.display=!recipe.display;
+ 
 }
 
 
